@@ -1,0 +1,80 @@
+import { Droplets, Flame, Gauge, PlugZap, Wrench } from 'lucide-react'
+import { imagery } from './imagery'
+import type { Service } from '../types/content'
+
+export const services: Service[] = [
+  {
+    slug: 'instalacoes-eletricas',
+    title: 'Instalações Elétricas',
+    shortTitle: 'Elétrica',
+    shortDescription: 'Infraestrutura, distribuição e adequações para sistemas elétricos organizados e confiáveis.',
+    description: 'Planejamos e executamos instalações elétricas para obras novas, adequações e modernizações, considerando a integração com os demais sistemas do empreendimento e a facilidade de manutenção.',
+    icon: PlugZap,
+    features: ['Infraestrutura elétrica', 'Distribuição e circuitos', 'Quadros e alimentação', 'Adequações e retrofit', 'Manutenção preventiva e corretiva'],
+    problems: ['Infraestrutura incompatível com o uso', 'Circuitos desorganizados ou subdimensionados', 'Necessidade de modernização', 'Interrupções recorrentes na operação'],
+    buildingTypes: ['Edifícios comerciais', 'Condomínios', 'Empreendimentos corporativos', 'Varejo', 'Instalações industriais'],
+    differentials: ['Coordenação com outras disciplinas', 'Execução por etapas', 'Verificação antes da entrega'],
+    image: imagery.electrician,
+    imageAlt: 'Profissional trabalhando em um quadro elétrico — imagem temporária de acervo',
+  },
+  {
+    slug: 'instalacoes-hidraulicas',
+    title: 'Instalações Hidráulicas',
+    shortTitle: 'Hidráulica',
+    shortDescription: 'Redes de água, esgoto e águas pluviais pensadas para desempenho e manutenção.',
+    description: 'Executamos redes hidráulicas e hidrossanitárias com organização de traçados, pontos e interfaces, atendendo implantações, ampliações, correções e retrofit de instalações existentes.',
+    icon: Droplets,
+    features: ['Água fria e quente', 'Esgoto sanitário', 'Águas pluviais', 'Redes hidrossanitárias', 'Adequações e manutenção'],
+    problems: ['Vazamentos e perdas recorrentes', 'Redes antigas ou inadequadas', 'Mudanças de layout e novos pontos', 'Dificuldade de acesso para manutenção'],
+    buildingTypes: ['Residencial', 'Condomínios', 'Comercial', 'Corporativo', 'Logística'],
+    differentials: ['Leitura integrada do ambiente', 'Organização de redes e acessos', 'Acompanhamento dos testes'],
+    image: imagery.pipeInspection,
+    imageAlt: 'Inspeção de tubulação em obra — imagem temporária de acervo',
+  },
+  {
+    slug: 'instalacoes-de-gas',
+    title: 'Instalações de Gás',
+    shortTitle: 'Gás',
+    shortDescription: 'Implantação, adequação e manutenção de redes de distribuição para diferentes usos.',
+    description: 'Atuamos na implantação e adequação de redes de gás, com atenção ao traçado, aos pontos de consumo, à organização da execução e à manutenção futura do sistema.',
+    icon: Gauge,
+    features: ['Implantação de redes', 'Adequações de traçado', 'Redes de distribuição', 'Inspeções operacionais', 'Manutenção e ajustes'],
+    problems: ['Rede incompatível com novo layout', 'Ampliação de pontos de consumo', 'Instalação antiga que exige adequação', 'Necessidade de manutenção programada'],
+    buildingTypes: ['Condomínios', 'Residencial', 'Comercial', 'Varejo', 'Cozinhas profissionais'],
+    differentials: ['Planejamento do percurso', 'Interferências avaliadas previamente', 'Entrega com orientação de operação'],
+    image: imagery.infrastructure,
+    imageAlt: 'Execução de infraestrutura em obra — imagem temporária de acervo',
+  },
+  {
+    slug: 'combate-a-incendio',
+    title: 'Combate a Incêndio',
+    shortTitle: 'Incêndio',
+    shortDescription: 'Infraestrutura e redes para sistemas de prevenção e combate a incêndio.',
+    description: 'Executamos infraestrutura, tubulações e componentes de sistemas de combate a incêndio conforme o escopo técnico do empreendimento, coordenando a implantação com as demais frentes de obra.',
+    icon: Flame,
+    features: ['Infraestrutura e tubulações', 'Redes de hidrantes', 'Redes de sprinklers', 'Bombas e componentes', 'Adequações de instalações'],
+    problems: ['Infraestrutura incompleta', 'Interferências com outras disciplinas', 'Ampliação ou mudança de ocupação', 'Sistema existente que precisa de ajustes'],
+    buildingTypes: ['Comercial', 'Corporativo', 'Industrial', 'Logística', 'Condomínios'],
+    differentials: ['Compatibilização de frentes', 'Execução organizada', 'Verificação de componentes instalados'],
+    image: imagery.fireSystem,
+    imageAlt: 'Rede industrial de combate a incêndio — imagem temporária de acervo',
+  },
+  {
+    slug: 'assistencia-tecnica',
+    title: 'Assistência Técnica e Manutenção',
+    shortTitle: 'Manutenção',
+    shortDescription: 'Diagnóstico, correções e manutenção para sistemas existentes continuarem operacionais.',
+    description: 'Atendemos instalações existentes com diagnóstico, manutenção preventiva e corretiva, ajustes, modernizações e suporte técnico para preservar a segurança e a continuidade da operação.',
+    icon: Wrench,
+    features: ['Manutenção preventiva', 'Manutenção corretiva', 'Diagnóstico e ajustes', 'Retrofit e modernização', 'Suporte técnico'],
+    problems: ['Falhas recorrentes', 'Paradas inesperadas', 'Instalações antigas', 'Mudanças de uso', 'Necessidade de plano preventivo'],
+    buildingTypes: ['Empresas', 'Condomínios', 'Comércio', 'Corporativo', 'Instalações logísticas'],
+    differentials: ['Atendimento direcionado ao problema', 'Registro das intervenções', 'Visão de continuidade operacional'],
+    image: imagery.maintenance,
+    imageAlt: 'Equipe em manutenção de infraestrutura — imagem temporária de acervo',
+  },
+]
+
+export function getServiceBySlug(slug: string) {
+  return services.find((service) => service.slug === slug)
+}
